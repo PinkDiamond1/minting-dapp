@@ -368,15 +368,15 @@ const Mint = () => {
               color: "var(--primary-text)",
             }}
           >
-            To claim this free NFT you need to be an active staker in
+            To claim this free NFT you need to be an active staker in&nbsp;
             <StyledLink target={"_blank"} href={ CONFIG.DAPPS_STAKING_LINK }>
               dApps Staking
             </StyledLink>
-            on { CONFIG.NETWORK.NAME }
-            and you need to be registered as
+            &nbsp;on { CONFIG.NETWORK.NAME }
+            and you need to be registered as&nbsp;
             <StyledLink target={"_blank"} href={CONFIG.PASS_LINK}>
               {CONFIG.PASS_NAME}
-            </StyledLink>
+            </StyledLink>&nbsp;
             holder. Otherwise you can still mint 1 NFT but you need to pay.
           </s.TextDescription>
           <s.SpacerLarge />
