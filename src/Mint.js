@@ -97,6 +97,8 @@ const Mint = () => {
     MARKETPLACE: "",
     MARKETPLACE_LINK: "",
     SHOW_BACKGROUND: false,
+    PASS_NAME: "",
+    PASS_LINK: ""
   });
   const MAX_MINT_AMOUNT = 1;
   const CAN_MINT = true;
@@ -200,14 +202,8 @@ const Mint = () => {
           }}
         >
           {/* Minting starts on March 28<span style={{ verticalAlign: 'super', fontSize: 12 }}>st</span> 2022 at 13:00 UTC. */}
-          Mint your FREE NFT if you are an active staker in dApps staking.
+          FREE NFT for active stakers in dApps staking.
         </s.TextTitle>
-        <s.TextDescription style={{ textAlign: "center", color: "var(--accent-text)" }}>
-          NFT Marketplace
-        </s.TextDescription>
-        <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
-          {CONFIG.MARKETPLACE}
-        </StyledLink>
         <s.SpacerSmall />
         <s.TextTitle
           style={{
@@ -229,6 +225,9 @@ const Mint = () => {
             {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
           </StyledLink>
         </s.TextDescription>
+        <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
+          {CONFIG.MARKETPLACE}
+        </StyledLink>
         <s.SpacerSmall />
         {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
           <>
@@ -369,8 +368,16 @@ const Mint = () => {
               color: "var(--primary-text)",
             }}
           >
-            To claim this free NFT you need to be an active staker in daaps Staking,
-            and you need to be registered as ShidenPass holder.
+            To claim this free NFT you need to be an active staker in
+            <StyledLink target={"_blank"} href={ CONFIG.DAPPS_STAKING_LINK }>
+              dApps Staking
+            </StyledLink>
+            on { CONFIG.NETWORK.NAME }
+            and you need to be registered as
+            <StyledLink target={"_blank"} href={CONFIG.PASS_LINK}>
+              {CONFIG.PASS_NAME}
+            </StyledLink>
+            holder. Otherwise you can still mint 1 NFT but you need to pay.
           </s.TextDescription>
           <s.SpacerLarge />
         <s.TextDescription
@@ -380,7 +387,7 @@ const Mint = () => {
             }}
           >
             Please make sure you are connected to the right network (
-            {CONFIG.NETWORK.NAME}) and the correct address. Please note:
+            { CONFIG.NETWORK.NAME }) and the correct address. Please note:
             Once you make the purchase, you cannot undo this action.
           </s.TextDescription>
           <s.SpacerLarge />

@@ -18,5 +18,8 @@
   "GAS_LIMIT": 300000,
   "MARKETPLACE": "TofuNFT",
   "MARKETPLACE_LINK": "https://tofunft.com/collection/shidenpass/items",
-  "SHOW_BACKGROUND": true
+  "SHOW_BACKGROUND": true,
+  "PASS_NAME": "ShidenPass",
+  "PASS_LINK": "https://astarbase-a4922.web.app/#/",
+  "DAPPS_STAKING_LINK": "https://portal.astar.network/#/dapp-staking/discover"
 }
