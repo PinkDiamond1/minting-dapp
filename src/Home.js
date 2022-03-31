@@ -34,7 +34,7 @@ export const HeaderSection = styled(StyledSection)`
   background-image: url(/config/images/background.jpg);
   background-repeat: repeat;
   min-height: 80vh;
-  align-items: center;
+  align-items: flex-start;
   display: flex;
 
   @media (max-width: 800px){
@@ -79,10 +79,18 @@ export const LogoConainer = styled(StyledContainer)`
   text-align: right;
   display: flex;
   height: 100%;
+  padding-top: 100px;
   img.back {
     width: 80%;
     min-width: 200px;
     max-width: 500px;
+  }
+
+  .passLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
   }
 
   @media (max-width: 800px){
@@ -133,8 +141,8 @@ const Home = () => {
         </Navigation>
         <LogoConainer>
           <img className="back" src="/config/images/mintingimage.png" />
-          <div>
-            {blockchain.account ? (data.isPassHolder ? <img width="100" src="/config/images/shiden-pass-ok.jpg" /> : <img width="100" src="/config/images/shiden-pass-nok.jpg" />) : <img width="100" src="/config/images/shiden-pass-gray.jpg" />}
+          <div className="passLogo">
+            {blockchain.account ? (data.isPassHolder ? <img width="100" src="/config/images/shiden-pass-ok.png" /> : <img width="100" src="/config/images/shiden-pass-nok.png" />) : <img width="100" src="/config/images/shiden-pass-gray.png" />}
           </div>
         </LogoConainer>
         <StyledContainer>
