@@ -1408,7 +1408,7 @@ contract ShidenPass is ERC721Enumerable, Ownable {
     string baseURI = "";
     string public baseExtension = ".json";
     uint256 public cost = 1 ether;
-    uint256 public maxSupply = 5000;
+    uint256 public maxSupply = 7777;
     uint256 public maxMintAmount = 1;
     bool public paused = true;
     bool public revealed = true;
@@ -1432,10 +1432,10 @@ contract ShidenPass is ERC721Enumerable, Ownable {
         uint256 supply = totalSupply();
         require(!paused, "The contract is paused");
         require(_mintAmount > 0, "Mint amount is 0");
-        require(_mintAmount <= maxMintAmount, "Max mint is exceeded");
         require(supply + _mintAmount <= maxSupply, "End of supply");
 
         if (msg.sender != owner()) {
+            require(_mintAmount <= maxMintAmount, "Max mint is exceeded");
             require(
                 balanceOf(msg.sender) + _mintAmount <= maxMintAmount,
                 "You have already minted"
@@ -1449,7 +1449,9 @@ contract ShidenPass is ERC721Enumerable, Ownable {
             }
         }
 
-        _safeMint(msg.sender, supply + 1);
+        for (uint256 i = 1; i <= _mintAmount; i++) {
+            _safeMint(msg.sender, supply + i);
+        }
     }
 
     /// @notice this function verifies staker status by using caller's account
