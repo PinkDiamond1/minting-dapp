@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-// File: contracts/AstarBase_flat.sol
+// Sources flattened with hardhat v2.8.4 https://hardhat.org
 // File: contracts/SR25519Dummy.sol
 pragma solidity >=0.7.0;
 
@@ -267,11 +267,7 @@ library Counters {
 // File: contracts/AstarBase.sol
 
 
-pragma solidity ^0.8.7;
-
-
-
-
+pragma solidity ^0.8.0;
 
 /// @author The Astar Network Team
 /// @title Astarbase. Mapping of Stakers ss58 <> H160
@@ -383,9 +379,10 @@ contract AstarBase is Ownable {
     }
 }
 
-// File: contracts/ShidenPass.sol
 
+// File contracts/ShidenPass.sol
 
+// SPDX-License-Identifier: MIT
 
 // File: @openzeppelin/contracts/utils/introspection/IERC165.sol
 pragma solidity ^0.8.0;
@@ -1687,14 +1684,13 @@ abstract contract ERC721Enumerable is ERC721, IERC721Enumerable {
 
 pragma solidity >=0.7.0 <0.9.0;
 
-
 contract ShidenPass is ERC721Enumerable, Ownable {
     using Strings for uint256;
 
     string baseURI = "";
     string public baseExtension = ".json";
     uint256 public cost = 1 ether;
-    uint256 public maxSupply = 5000;
+    uint256 public maxSupply = 7777;
     uint256 public maxMintAmount = 1;
     bool public paused = true;
     bool public revealed = true;
@@ -1719,10 +1715,10 @@ contract ShidenPass is ERC721Enumerable, Ownable {
         uint256 supply = totalSupply();
         require(!paused, "The contract is paused");
         require(_mintAmount > 0, "Mint amount is 0");
-        require(_mintAmount <= maxMintAmount, "Max mint is exceeded");
         require(supply + _mintAmount <= maxSupply, "End of supply");
 
         if (msg.sender != owner()) {
+            require(_mintAmount <= maxMintAmount, "Max mint is exceeded");
             require(
                 balanceOf(msg.sender) + _mintAmount <= maxMintAmount,
                 "You have already minted"
@@ -1736,7 +1732,9 @@ contract ShidenPass is ERC721Enumerable, Ownable {
             }
         }
 
-        _safeMint(msg.sender, supply + 1);
+        for (uint256 i = 1; i <= _mintAmount; i++) {
+            _safeMint(msg.sender, supply + i);
+        }
     }
 
     /// @notice this function verifies staker status by using caller's account
