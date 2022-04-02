@@ -1,0 +1,9 @@
+ShidenPass NFT images, IPFS CID
+bafybeif2jznfr2tdqek42hy6kyjjtxa2i6anv4s7qo7mo2xbyf4str2jmy
+
+
+metadata json
+ipfs://bafybeieo5tw6r45wrdi65zkuahkgvhju7zaueijbf2iytvau72vdyvf4mu
+
+ipfs://bafybeieo5tw6r45wrdi65zkuahkgvhju7zaueijbf2iytvau72vdyvf4mu/6001.json
+
