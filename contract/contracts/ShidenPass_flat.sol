@@ -382,8 +382,6 @@ contract AstarBase is Ownable {
 
 // File contracts/ShidenPass.sol
 
-// SPDX-License-Identifier: MIT
-
 // File: @openzeppelin/contracts/utils/introspection/IERC165.sol
 pragma solidity ^0.8.0;
 
